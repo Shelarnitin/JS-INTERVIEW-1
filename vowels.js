@@ -17,3 +17,53 @@ function findVowelPositions(s){
 }
 
 console.log(findVowelPositions("Hello WORLD"))
+
+
+// [02] a replace with b & b replace with c
+/*
+Input: "Zoo!"
+Output: "App!"
+*/
+
+function solution(s) {
+  const lower = 'abcdefghijklmnopqrstuvwxyz';
+  const upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+  let result = '';
+
+  for (let i = 0; i < s.length; i++) {
+    const ch = s[i];
+    let found = false;
+
+    // check lowercase alphabet
+    for (let j = 0; j < lower.length; j++) {
+      if (ch === lower[j]) {
+        // next letter, wrap with modulo
+        const next = (j + 1) % lower.length;
+        result += lower[next];
+        found = true;
+        break;
+      }
+    }
+    if (found) continue;
+
+    // check uppercase alphabet
+    for (let j = 0; j < upper.length; j++) {
+      if (ch === upper[j]) {
+        const next = (j + 1) % upper.length;
+        result += upper[next];
+        found = true;
+        break;
+      }
+    }
+    if (found) continue;
+
+    // non-letter characters remain unchanged
+    result += ch;
+  }
+
+  return result;
+}
+
+console.log(solution("NITIN"))
+console.log(solution("MHSHM"))
