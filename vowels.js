@@ -67,3 +67,30 @@ function solution(s) {
 
 console.log(solution("NITIN"))
 console.log(solution("MHSHM"))
+
+
+
+// Case conversion function
+
+const inputString = "HelLo WoRld 123";
+let result = "";
+
+for (let i = 0; i < inputString.length; i++) {
+    const ch = inputString[i];
+    const code = ch.charCodeAt(0);
+
+    // lowercase → uppercase
+    if (code >= 97 && code <= 122) {
+        result += String.fromCharCode(code - 32);
+    }
+    // uppercase → lowercase
+    else if (code >= 65 && code <= 90) {
+        result += String.fromCharCode(code + 32);
+    }
+    // non-letters remain same
+    else {
+        result += ch;
+    }
+}
+
+console.log(result); // hELlO wOrLD 123
