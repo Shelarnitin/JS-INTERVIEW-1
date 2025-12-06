@@ -94,3 +94,29 @@ for (let i = 0; i < inputString.length; i++) {
 }
 
 console.log(result); // hELlO wOrLD 123
+
+
+
+
+// Replace all occurrences of char1 with char2 WITHOUT using replace()
+
+function replaceCharacter(inputString, char1, char2) {
+    let result = "";
+
+    for (let i = 0; i < inputString.length; i++) {
+        const ch = inputString[i];
+
+        if (ch === char1) {
+            result += char2;   // replace char1 → char2
+        } else {
+            result += ch;      // keep original
+        }
+    }
+
+    return result;
+}
+
+// Test the function
+const output = replaceCharacter("hello, world", "o", "a");
+console.log(output); // Output: "hella, warld"
+
