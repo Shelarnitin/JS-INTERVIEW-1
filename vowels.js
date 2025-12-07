@@ -120,3 +120,26 @@ function replaceCharacter(inputString, char1, char2) {
 const output = replaceCharacter("hello, world", "o", "a");
 console.log(output); // Output: "hella, warld"
 
+
+
+
+// swap
+function swapAdjacentPairs(s) {
+    let result = "";
+
+    for (let i = 0; i < s.length; i += 2) {
+        // if next character exists, swap
+        if (i + 1 < s.length) {
+            result += s[i + 1];
+            result += s[i];
+        } 
+        // if odd length → keep last character as is
+        else {
+            result += s[i];
+        }
+    }
+
+    return result;
+}
+
+console.log(swapAdjacentPairs("Nitin"))
