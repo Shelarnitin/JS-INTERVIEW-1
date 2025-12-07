@@ -143,3 +143,57 @@ function swapAdjacentPairs(s) {
 }
 
 console.log(swapAdjacentPairs("Nitin"))
+
+
+
+
+// left and right, converting cases using ASCII values.
+function solution(input_string) {
+    let left = 0;
+    let right = input_string.length - 1;
+
+    while (left < right) {
+        let leftChar = input_string[left];
+        let rightChar = input_string[right];
+
+        // Skip non-alphanumeric characters
+        if (!isAlphaNumeric(leftChar)) {
+            left++;
+            continue;
+        }
+        if (!isAlphaNumeric(rightChar)) {
+            right--;
+            continue;
+        }
+
+        // Convert leftChar to lowercase manually
+        let leftCode = leftChar.charCodeAt(0);
+        if (leftCode >= 65 && leftCode <= 90) {   // A–Z
+            leftCode += 32; // convert to lowercase
+        }
+
+        // Convert rightChar to lowercase manually
+        let rightCode = rightChar.charCodeAt(0);
+        if (rightCode >= 65 && rightCode <= 90) { // A–Z
+            rightCode += 32; // convert to lowercase
+        }
+
+        // Compare
+        if (leftCode !== rightCode) {
+            return false;
+        }
+
+        left++;
+        right--;
+    }
+
+    return true;
+}
+
+function isAlphaNumeric(char) {
+    return char.match(/[a-z0-9]/i);
+}
+
+console.log(solution("A man, a plan, a canal: Panama")); // true
+console.log(solution("racecar"));                        // true
+console.log(solution("hello"));                          // false
