@@ -107,9 +107,9 @@ function replaceCharacter(inputString, char1, char2) {
         const ch = inputString[i];
 
         if (ch === char1) {
-            result += char2;   // replace char1 → char2
+            result += char2;   
         } else {
-            result += ch;      // keep original
+            result += ch;      
         }
     }
 
