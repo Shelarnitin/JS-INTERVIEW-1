@@ -12,3 +12,18 @@ function findMin(arr) {
 
 const sampleArray = [2,3,4,1,17,4,6,9]
 console.log(findMin(sampleArray));
+
+// FIND Max ELEMENT IN THE ARRAY
+
+function findMax(arr) {
+    let maxElement = arr[0];
+    for (let i = 1; i < arr.length; i++) {
+        if(arr[i] > maxElement) {
+            maxElement = arr[i];
+        }
+    }
+    return maxElement
+}
+
+const sampleArray1 = [2,3,4,1,17,4,6,9]
+console.log(findMax(sampleArray1));
