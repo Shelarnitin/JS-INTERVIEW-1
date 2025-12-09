@@ -94,3 +94,39 @@ console.log(countMin([3, 1, 2, 1, 4])); // 2
 console.log(countMin([5, 5, 5]));       // 3
 console.log(countMin([10]));            // 1
 console.log(countMin([]));              // 0
+
+
+
+/************************find the second-largest number*************************** */
+function secondMax(nums) {
+    if (nums.length < 2) {
+        return null;
+    }
+    let max = null;
+    let second = null;
+    for (let i = 0; i < nums.length; i++) {
+        const value = nums[i];
+        if (max === null) {
+            max = value;
+            continue;
+        }
+        if (value > max) {
+            second = max;
+            max = value;
+        }
+        else if (value < max) {
+            if (second === null || value > second) {
+                second = value;
+            }
+        }
+    }
+    return second;
+}
+
+console.log(secondMax([1, 3, 5, 2, 4]));      // 4
+console.log(secondMax([10, 10, 9]));          // 9
+console.log(secondMax([5]));                  // null
+console.log(secondMax([7, 7, 7]));            // null
+console.log(secondMax([100, 50]));            // 50
+
+
