@@ -95,35 +95,30 @@ console.log(nthPrime(10)); // 29
 
 function getPrimeFactors(n) {
     let factors = [];
+    let i = 2;
 
-    // Try all divisors from 2 to n
-    for (let i = 2; i <= n; i++) {
-        // Check if i divides n
+    // Check for smallest divisors up to sqrt(n)
+    while (i * i <= n) {
         if (n % i === 0) {
-
-            // Check if i is prime
-            if (isPrime(i)) {
-
-                // Add to factors
-                factors.push(i);
+            factors.push(i); // i is a prime factor
+            
+            // Divide n fully by i to remove duplicates
+            while (n % i === 0) {
+                n = n / i;
             }
         }
+        i++;
+    }
+
+    // If n is still > 1, it's a prime factor itself
+    if (n > 1) {
+        factors.push(n);
     }
 
     return factors;
 }
 
-// Helper function to check primality
-function isPrime(x) {
-    if (x < 2) return false;
 
-    let j = 2;
-    while (j * j <= x) {
-        if (x % j === 0) return false;
-        j++;
-    }
-    return true;
-}
 
 console.log(getPrimeFactors(12));   // [2, 3]
 console.log(getPrimeFactors(30));   // [2, 3, 5]
