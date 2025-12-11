@@ -51,3 +51,40 @@ function isPrime(x) {
 
 console.log(nextPrime(7));   // 11
 console.log(nextPrime(13));  // 17
+
+
+// ****************** n th Prime  *****************
+
+function nthPrime(n) {
+    let count = 0;     // how many primes found
+    let num = 2;       // start checking from the first prime
+
+    while (true) {
+        if (isPrime(num)) {
+            count++;
+            if (count === n) {
+                return num;
+            }
+        }
+        num++;
+    }
+}
+
+// helper function to test primality
+function isPrime(x) {
+    if (x < 2) return false;
+
+    let i = 2;
+    // check divisors while i * i <= x
+    while (i * i <= x) {
+        if (x % i === 0) {
+            return false;
+        }
+        i++;
+    }
+
+    return true;
+}
+
+console.log(nthPrime(5)); // 11
+console.log(nthPrime(10)); // 29
