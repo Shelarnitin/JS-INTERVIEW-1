@@ -88,3 +88,42 @@ function isPrime(x) {
 
 console.log(nthPrime(5)); // 11
 console.log(nthPrime(10)); // 29
+
+
+
+/******************* Get Prime Factorial *************************/
+
+function getPrimeFactors(n) {
+    let factors = [];
+
+    // Try all divisors from 2 to n
+    for (let i = 2; i <= n; i++) {
+        // Check if i divides n
+        if (n % i === 0) {
+
+            // Check if i is prime
+            if (isPrime(i)) {
+
+                // Add to factors
+                factors.push(i);
+            }
+        }
+    }
+
+    return factors;
+}
+
+// Helper function to check primality
+function isPrime(x) {
+    if (x < 2) return false;
+
+    let j = 2;
+    while (j * j <= x) {
+        if (x % j === 0) return false;
+        j++;
+    }
+    return true;
+}
+
+console.log(getPrimeFactors(12));   // [2, 3]
+console.log(getPrimeFactors(30));   // [2, 3, 5]
