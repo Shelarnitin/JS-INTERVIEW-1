@@ -1,4 +1,12 @@
 # javascript interview
+# Day - 3
+** Array.js
+* Perfect Square
+* Next Prime
+* n th Prime
+* Get Prime Factorial
+
+
 # Day - 2
 ** Array.js
 * FIND MIN ELEMENT IN THE ARRAY
