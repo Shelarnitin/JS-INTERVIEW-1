@@ -1,3 +1,5 @@
+/*********************** Perfect Square *******************/
+
 function isPerfectSquare(n) {
     if (n < 0) {
         return false;
