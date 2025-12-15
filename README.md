@@ -1,4 +1,12 @@
 # javascript interview
+# Day - 4
+** Array.js
+* Find Index
+* CountUniqeElement
+* Reverse Array
+* Shifting Array
+* Countiguous subarray
+
 # Day - 3
 ** Array.js
 * Perfect Square
