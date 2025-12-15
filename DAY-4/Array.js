@@ -99,3 +99,45 @@ function shiftArrayElements(arr, shift) {
 
 console.log(shiftArrayElements([10, 20, 30], 1));
 // [30, 10, 20]
+
+
+/***************** Countiguous subarray ***************/
+
+function isSubarray(arrayA, arrayB) {
+    const n = arrayA.length;
+    const m = arrayB.length;
+
+    // An empty arrayB is always a subarray
+    if (m === 0) {
+        return true;
+    }
+
+    // If arrayB is longer, it cannot be a subarray
+    if (m > n) {
+        return false;
+    }
+
+    // Try each possible starting position in arrayA
+    for (let i = 0; i <= n - m; i++) {
+        let match = true;
+
+        // Check if arrayB matches starting at i
+        for (let j = 0; j < m; j++) {
+            if (arrayA[i + j] !== arrayB[j]) {
+                match = false;
+                break;
+            }
+        }
+
+        // If full match found
+        if (match) {
+            return true;
+        }
+    }
+
+    // No match found
+    return false;
+}
+
+console.log(isSubarray([1, 2, 3, 4], [2, 3]));   // true
+console.log(isSubarray([1, 2, 3, 4], [3, 2]));   // false
