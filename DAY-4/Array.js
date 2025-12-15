@@ -66,3 +66,36 @@ function reverseArray(arr) {
 
 console.log(reverseArray([1, 2, 3, 4, 5])); // [5, 4, 3, 2, 1]
 console.log(reverseArray([10, 20]));
+
+
+/************** Shifting Array ********************/
+
+function shiftArrayElements(arr, shift) {
+    const n = arr.length;
+
+    if (n === 0) {
+        return [];
+    }
+
+    let result = new Array(n);
+
+    shift = shift % n;
+
+    if (shift < 0) {
+        shift = shift + n;
+    }
+    for (let i = 0; i < n; i++) {
+        let newIndex = i + shift;
+
+        if (newIndex >= n) {
+            newIndex = newIndex - n;
+        }
+
+        result[newIndex] = arr[i];
+    }
+
+    return result;
+}
+
+console.log(shiftArrayElements([10, 20, 30], 1));
+// [30, 10, 20]
