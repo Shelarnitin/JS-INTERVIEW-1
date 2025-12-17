@@ -42,3 +42,16 @@ function solution(n) {
 }
 
 console.log(solution(5)); // [5, 4, 3, 2, 1]
+
+
+// (3) ************* Reverse String **********
+
+function reverseString(s, index = s.length - 1) {
+    if (index < 0) {
+        return "";
+    }
+    return s[index] + reverseString(s, index - 1);
+}
+
+console.log(reverseString("hello")); // "olleh"
+console.log(reverseString("abc"));   // "cba"
