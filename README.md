@@ -1,4 +1,10 @@
 # javascript interview
+# Day - 5
+** Array.js
+* GetSum
+* recursive n-to-1
+* Reverse String
+
 # Day - 4
 ** Array.js
 * Find Index
