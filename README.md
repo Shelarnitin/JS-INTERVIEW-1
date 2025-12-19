@@ -1,4 +1,9 @@
 # javascript interview
+# Day - 6
+** matrix.js
+* Toeplitz
+* countLessThan
+
 # Day - 5
 ** Array.js
 * GetSum
