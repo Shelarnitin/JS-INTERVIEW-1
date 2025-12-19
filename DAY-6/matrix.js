@@ -28,7 +28,7 @@ console.log(isToeplitz([
 ])); // false
 
 
-
+// ************* countLessThan *******************
 
 function countLessThan(matrix, target) {
     const n = matrix.length;
