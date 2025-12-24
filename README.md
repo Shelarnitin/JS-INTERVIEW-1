@@ -1,4 +1,9 @@
 # javascript interview
+# Day - 7
+** Array.js
+* ReverseArray
+* ShuffleArray
+
 # Day - 6
 ** matrix.js
 * Toeplitz
