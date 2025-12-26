@@ -28,3 +28,36 @@ function solution(string1, string2) {
 
 console.log(solution("apple", "peach"));  // ape
 console.log(solution("flow", "flower"));  // flow
+
+
+
+/****************RepeatSubstring ***************/
+
+function repeatSubstring(s) {
+    const n = s.length;
+
+    for (let len = Math.floor(n / 2); len >= 1; len--) {
+        if (n % len !== 0) continue;
+
+        let sub = "";
+        for (let i = 0; i < len; i++) {
+            sub += s[i];
+        }
+
+        let built = "";
+        for (let i = 0; i < n / len; i++) {
+            built += sub;
+        }
+
+        if (built === s) {
+            return sub;
+        }
+    }
+
+    return "";
+}
+
+console.log(repeatSubstring("abababab")); // "abab"
+console.log(repeatSubstring("aaaa"));     // "aa"
+console.log(repeatSubstring("abcabcab")); // ""
+console.log(repeatSubstring("xyzxyz"));   // "xyz"
