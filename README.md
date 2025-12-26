@@ -1,4 +1,10 @@
 # javascript interview
+# Day - 8
+** Array.js
+* Duplicates
+* RepeatSubstring
+* FindMostcommenString
+
 # Day - 7
 ** Array.js
 * ReverseArray
