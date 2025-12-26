@@ -61,3 +61,43 @@ console.log(repeatSubstring("abababab")); // "abab"
 console.log(repeatSubstring("aaaa"));     // "aa"
 console.log(repeatSubstring("abcabcab")); // ""
 console.log(repeatSubstring("xyzxyz"));   // "xyz"
+
+
+
+// *************** FindMostcommenString ******************
+
+function findMostCommonSubstring(s, length) {
+    if (length <= 0 || length > s.length) return "";
+
+    let freq = {};
+    let maxCount = 0;
+    let answer = "";
+
+    for (let i = 0; i <= s.length - length; i++) {
+        // build substring manually
+        let sub = "";
+        for (let j = 0; j < length; j++) {
+            sub += s[i + j];
+        }
+
+        // update frequency
+        if (freq[sub] === undefined) {
+            freq[sub] = 1;
+        } else {
+            freq[sub]++;
+        }
+
+        // update best answer
+        if (
+            freq[sub] > maxCount ||
+            (freq[sub] === maxCount && (answer === "" || sub < answer))
+        ) {
+            maxCount = freq[sub];
+            answer = sub;
+        }
+    }
+
+    return answer;
+}
+
+console.log(findMostCommonSubstring("bananabananaba", 5));   // anaba
