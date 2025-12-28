@@ -1,4 +1,11 @@
 # javascript interview
+# Day - 9
+** Array.js
+* mergeSortedArrays
+* Remove Commen Element
+* MergeArrya & decending order
+* Merge & Asending
+
 # Day - 8
 ** Array.js
 * Duplicates
