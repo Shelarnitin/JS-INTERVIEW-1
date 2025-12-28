@@ -73,3 +73,59 @@ function removeCommonElements(arr1, arr2) {
 
 removeCommonElements([2, 5, 7, 10], [1, 5, 9]);
 // Output: [1, 2, 7, 9, 10]
+
+
+
+/**************MergeArrya & decending order *************/
+
+function mergeSortedArraysDescendingUnique(arr1, arr2) {
+    let i = arr1.length - 1;
+    let j = arr2.length - 1;
+    const result = [];
+
+    while (i >= 0 && j >= 0) {
+        if (arr1[i] === arr2[j]) {
+            if (result[result.length - 1] !== arr1[i]) {
+                result.push(arr1[i]);
+            }
+            i--;
+            j--;
+        } else if (arr1[i] > arr2[j]) {
+            if (result[result.length - 1] !== arr1[i]) {
+                result.push(arr1[i]);
+            }
+            i--;
+        } else {
+            if (result[result.length - 1] !== arr2[j]) {
+                result.push(arr2[j]);
+            }
+            j--;
+        }
+    }
+
+    // Remaining elements in arr1
+    while (i >= 0) {
+        if (result[result.length - 1] !== arr1[i]) {
+            result.push(arr1[i]);
+        }
+        i--;
+    }
+
+    // Remaining elements in arr2
+    while (j >= 0) {
+        if (result[result.length - 1] !== arr2[j]) {
+            result.push(arr2[j]);
+        }
+        j--;
+    }
+
+    return result;
+}
+
+mergeSortedArraysDescendingUnique(
+  [1, 2, 3, 4, 5],
+  [3, 4, 5, 6, 7]
+);
+
+// Output:
+// [7, 6, 5, 4, 3, 2, 1]
