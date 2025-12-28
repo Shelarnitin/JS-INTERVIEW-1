@@ -129,3 +129,52 @@ mergeSortedArraysDescendingUnique(
 
 // Output:
 // [7, 6, 5, 4, 3, 2, 1]
+
+
+
+/************Merge & Asending *************/
+function mergeNSortedArrays(arr) {
+    let result = [];
+
+    for (let i = 0; i < arr.length; i++) {
+        result = mergeTwoSortedArrays(result, arr[i]);
+    }
+
+    return result;
+}
+
+function mergeTwoSortedArrays(a, b) {
+    let i = 0, j = 0;
+    const merged = [];
+
+    while (i < a.length && j < b.length) {
+        if (a[i] <= b[j]) {
+            merged.push(a[i]);
+            i++;
+        } else {
+            merged.push(b[j]);
+            j++;
+        }
+    }
+
+    while (i < a.length) {
+        merged.push(a[i]);
+        i++;
+    }
+
+    while (j < b.length) {
+        merged.push(b[j]);
+        j++;
+    }
+
+    return merged;
+}
+
+mergeNSortedArrays([
+  [1, 4, 7],
+  [2, 5, 8],
+  [3, 6, 9]
+]);
+
+// Output:
+// [1, 2, 3, 4, 5, 6, 7, 8, 9]
