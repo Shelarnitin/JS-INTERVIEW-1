@@ -99,3 +99,35 @@ function merge(left, right) {
 console.log(mergeSort([10, 3, 2, 8, -1, 5, 1]));
 // Output: [-1, 1, 2, 3, 5, 8, 10]
 
+
+
+
+/****************** quicksort *******************/
+
+function quicksortCustom(arr) {
+    if (arr.length <= 1) {
+        return arr;
+    }
+
+    const pivot = arr[arr.length - 1]; // choose last element as pivot
+    const left = [];
+    const right = [];
+
+    for (let i = 0; i < arr.length - 1; i++) {
+        if (arr[i] <= pivot) {
+            left.push(arr[i]);
+        } else {
+            right.push(arr[i]);
+        }
+    }
+
+    return [
+        ...quicksortCustom(left),
+        pivot,
+        ...quicksortCustom(right)
+    ];
+}
+
+console.log(quicksortCustom([3, 6, 8, 10, 1, 2, 1]));
+// Output: [1, 1, 2, 3, 6, 8, 10]
+
