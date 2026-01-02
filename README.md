@@ -1,4 +1,11 @@
 # javascript interview
+# Day - 10
+** sorting.js
+* Selection Sort
+* Insertion Sort
+* Merge Sort
+* quicksort
+
 # Day - 9
 ** Array.js
 * mergeSortedArrays
