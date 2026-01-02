@@ -25,3 +25,28 @@ function selectionSort(arr) {
 // Example
 console.log(selectionSort([3, 1, 2, 4, 5])); // [1, 2, 3, 4, 5]
 
+
+/**************Insertion Sort *******************/
+
+function insertionSort(arr) {
+    const n = arr.length;
+
+    for (let i = 1; i < n; i++) {
+        let key = arr[i];
+        let j = i - 1;
+
+        // Move elements that are greater than key one position ahead
+        while (j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j];
+            j--;
+        }
+
+        // Insert the key at the correct position
+        arr[j + 1] = key;
+    }
+
+    return arr;
+}
+
+console.log(insertionSort([5, 3, 1, 4, 2])); // [1, 2, 3, 4, 5]
+
